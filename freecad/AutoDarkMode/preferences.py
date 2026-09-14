@@ -52,7 +52,7 @@ def get_available_stylesheets() -> list:
             if not os.path.isdir(addon_path):
                 continue
             # Skip backup folders and our own addon
-            if "backup" in addon_name.lower() or addon_name == "auto-dark-mode":
+            if "backup" in addon_name.lower() or addon_name.lower().replace("-", "") == "autodarkmode":
                 continue
             # Look for .qss files (not in overlay subfolders)
             for item in os.listdir(addon_path):

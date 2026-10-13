@@ -126,7 +126,7 @@ class ThemeManager:
 
             # Find BaseApp in cfg and apply to User parameter:BaseApp
             base_app_xml = root.find(".//FCParamGroup[@Name='BaseApp']")
-            if base_app_xml:
+            if base_app_xml is not None:
                 self._apply_params_recursive(base_app_xml, "User parameter:BaseApp")
 
             # NotifyAll on key parameter groups to trigger UI updates

@@ -34,10 +34,16 @@ def _init_auto_dark_mode():
                 edit_menu = None
                 menu_bar = mw.menuBar()
                 for action in menu_bar.actions():
-                    text = action.text().replace("&", "")
-                    if text.lower() in ("edit", "édition", "bearbeiten"):
+                    if action.objectName() == "&Edit":
                         edit_menu = action.menu()
                         break
+
+                if edit_menu is None:
+                    for action in menu_bar.actions():
+                        text = action.text().replace("&", "")
+                        if text.lower() in ("edit", "édition", "bearbeiten", "editar"):
+                            edit_menu = action.menu()
+                            break
 
                 if edit_menu:
                     edit_menu.addSeparator()
@@ -47,7 +53,7 @@ def _init_auto_dark_mode():
                 else:
                     for action in menu_bar.actions():
                         text = action.text().replace("&", "")
-                        if text.lower() in ("view", "affichage", "ansicht"):
+                        if text.lower() in ("view", "affichage", "ansicht", "exibir"):
                             view_menu = action.menu()
                             view_menu.addSeparator()
                             action = view_menu.addAction("Auto Dark Mode Settings...")

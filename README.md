@@ -37,7 +37,7 @@ You can now configure your themes, see [Configuration](#configuration)
 ## Supported Platforms
 
 > [!NOTE]
-> Should work for the 3 listed platforms but only tested on MacOS.
+> Tested on macOS and Linux. Should work on Windows as well.
 
 ### macOS
 Detects the system appearance setting (System Settings → Appearance).
